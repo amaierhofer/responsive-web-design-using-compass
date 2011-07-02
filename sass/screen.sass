@@ -1,0 +1,299 @@
+// Imports -------------------------------------------------------------------
+@import _base
+
+/* Layout ------------------------------------------------------------------
++establish-baseline(14px)
+body
+  #page
+    @include container
+    // Uncoment the mixin below to see the grid
+    // +susy-grid-background      
+    #page-header
+      @include full
+      @include pad(2,2)
+      background: url("../images/bg-header-pages.png") repeat-x left bottom
+      +padding-leader(2)      
+      min-height: 85px
+      +pie-clearfix
+      #logo
+        @include columns(5,16)
+      #main-menu
+        @include columns(11,16)
+        @include omega(16)
+        ul
+          @include main-menu
+    #main         
+      @include full(16)
+      @include pad(2,2)
+      +pie-clearfix
+      +padding-leader(1)
+      background: url("../images/bg-header-pages.png") repeat-x bottom
+      header
+        +padding-trailer(2)
+        #featured
+          text-align: center          
+      .column-1
+        @include columns(5,16)
+        @include prefix(0,16)        
+      .column-2
+        @include columns(5,16)
+        @include prefix(0,16)        
+      .column-3
+        @include columns(5,16)
+        @include prefix(0,16)        
+      .column-1,.column-2,.column-3
+        h2
+          +adjust-font-size-to(28px)
+        ul
+          list-style: disc inside          
+          color: $light-grey
+          li
+            padding-left: 1.5em
+            +margin-trailer(0.5)
+            +adjust-font-size-to(13px)        
+      footer
+        @include columns(15,16)
+        @include prefix(0,16)
+        @include suffix(1,16)
+        @include omega(16)
+        +pie-clearfix                
+        +padding-trailer(1)
+        +padding-leader(1)
+        text-align: center
+        .col-txt
+          @include columns(10,14)
+          p
+            +adjust-font-size-to(15px)
+            +border-radius(7px)
+            +padding-leader(1)
+            +padding-trailer(1)
+            +margin-trailer(1)
+            font-family: 'HelveticaNeueBold'
+            padding-left: 1em
+            padding-right: 1em
+            display: block            
+            background-color: #edeeed
+        .col-btn
+          @include columns(4,14)
+          @include omega(14)
+          float: left
+          a
+            @include yellow-btn
+    #secondary
+      @include full
+      @include pad(2,2)
+      +pie-clearfix
+      +padding-leader(3)
+      header
+        @include full(16)
+      .column-1
+        @include columns(6,16)
+      .column-2
+        @include columns(9,16)
+        @include omega(16)
+        #illustration-inchoo
+          img
+            vertical-align: bottom
+    #page-footer
+      +pie-clearfix
+      +padding-leader(2)
+      +padding-trailer(2)
+      background-color: #E5E5E5
+      @include full
+      @include pad(2,2)
+      p
+        font-family: Georgia
+        font-style: italic
+      a
+        color: $dark-grey
+        &:hover
+          color: $grey-hover
+      .column-1
+        @include columns(4,16)
+      .column-2,.column-3
+        @include columns(4,16)
+      .column-4
+        @include columns(4,16)
+        @include omega
+
+
+/* Media Queries ------------------------------------------------------------
+
+
+@media screen and (min-width: 1500px)
+  $base-line-height: 19px
+  +establish-baseline(16px)
+  body
+    hgroup
+      text-align: center
+    #page
+      #secondary
+        hgroup
+          text-align: left
+      
+
+@media screen and (max-width: 1024px)
+  body
+    hgroup
+      h1
+        +adjust-font-size-to(49px)
+      h2
+        +adjust-font-size-to(21px)
+    #page
+      #page-header
+        @include pad(1,1)
+        #logo
+          @include columns(6,18)
+        #main-menu
+          @include columns(12,18)
+          @include omega(18)
+      #main
+        @include pad(1,1)
+        @include full(18)
+        +padding-trailer(1)
+        .column-1,.column-3
+          @include columns(8,18)
+          @include suffix(1,18)
+          @include prefix(0,18)
+        .column-2,footer
+          @include columns(8,18)
+          @include suffix(1,18)
+          @include prefix(0,18)                          
+          @include omega(18)
+        .column-1,.column-2, .column-3
+          +padding-trailer(1)
+        footer
+          +padding-trailer(1)
+          +padding-leader(1)
+          .col-txt
+            @include columns(8,8)
+          .col-btn
+            @include columns(8,8)
+            @include omega(8)
+      #secondary
+        @include pad(1,1)
+        .column-1
+          @include columns(7,18)
+        .column-2
+          @include columns(10,18)
+          @include omega
+          #illustration-inchoo
+            +padding-leader(3)
+      #page-footer
+        @include pad(1,1)
+  
+
+@media screen and (max-width: 810px)
+  body
+    #page
+      #secondary
+        .column-2
+          #illustration-inchoo
+            +padding-leader(3)
+ 
+
+@media screen and (max-width: 840px)
+  +establish-baseline(13px)
+  body
+    hgroup
+      h1
+        +adjust-font-size-to(46px)
+      h2
+        +adjust-font-size-to(19px)
+    #page
+      #page-header
+        @include pad(1,1)
+        #logo
+          @include columns(18,18)
+          @include omega
+          text-align: center
+        #main-menu
+          @include columns(18,18)
+          @include omega(18)
+          +padding-trailer(1)
+          +padding-leader(1)
+          ul
+            float: none
+            text-align: center          
+      #secondary
+        .column-2
+          #illustration-inchoo
+            +padding-leader(5)
+
+
+@media screen and (max-width: 710px)
+  body
+    hgroup
+      h1
+        +adjust-font-size-to(31px)
+      h2
+        +adjust-font-size-to(18px)
+    #page
+      #secondary
+        .column-1, .column-2
+          @include columns(18,18)
+          @include omega
+          #illustration-inchoo
+            +padding-leader(0)
+      #page-footer
+        .column-1,.column-2,.column-3
+          @include columns(6,18)                  
+        .column-3
+          @include omega(18)
+        .column-4
+          @include columns(18,18)
+          @include omega(18)
+          +margin-leader(2)
+        .column-1,.column-2,.column-3,.column-4
+          div
+            border-left: 1px solid #ccc            
+            padding: 0 1em
+
+
+@media screen and (max-width: 480px)
+  $base-line-height: 16px
+  +establish-baseline(12px)
+  body
+    hgroup
+      h1
+        +adjust-font-size-to(27px)
+      h2
+        +adjust-font-size-to(18px)
+    #page
+      #page-header
+        #main-menu
+          ul
+            +adjust-font-size-to(12px)
+            li:after
+              padding: 0 1px 0 4px
+      #main
+        .column-1, .column-2, .column-3        
+          @include columns(18,18)
+          @include omega(18)
+          @include prefix(0,18)
+          @include suffix(0,18)
+          +padding-trailer(1)
+          h2
+            +adjust-font-size-to(22px)
+        footer
+          @include columns(18,18)
+          @include omega(18)
+          @include prefix(0,18)
+          @include suffix(0,18)
+          .col-txt
+            @include columns(18,18)
+          .col-btn
+            @include columns(18,18)
+            @include omega(18)
+      #page-footer
+        .column-1,.column-3
+          @include columns(8,18)          
+          @include suffix(2)
+        .column-2,.column-4
+          @include columns(8,18)          
+          @include omega(18)
+        .column-1,.column-2,.column-3,.column-4
+          +margin-trailer(2)
+          +margin-leader(0)
+
+

@@ -1,0 +1,217 @@
+// Imports -------------------------------------------------------------------
+@import susy
+@import compass
+@import compass/css3
+@import compass/css3/box-shadow
+@import compass/css3/gradient
+@import compass/css3/opacity
+@import compass/css3/border-radius
+@import compass/typography/vertical_rhythm
+@import compass/layout/grid-background
+@import compass/css3/text-shadow
+
+
+// Reset --------------------------------------------------------------------
+@include global-reset
+
+
+// Flexible Grid ---------------------------------------------------------------------
+
+$total-cols: 20
+
+// Remember the formula:
+// Target ÷ context 
+// Then move the "." two decimals to the right.
+
+// 40 ÷ 1180 = col-width
+$col-width: 3.3898305084746%
+
+// 20 ÷ 1180 = gutter-width
+$gutter-width: 1.6949152542373%
+
+$side-gutter-width: 0
+$show-grid-backgrounds: true
+$grid-background-column-color : #f2f2f2
+$from-direction: left
+
+
+// Vertical Rhythm ----------------------------------------------------------
+$base-font-size: 14px
+$base-line-height: 17px
+$default-rhythm-border-style: solid
+$ie-font-ratio: 17px / 100%
+$base-rhythm-unit: $base-line-height / $base-font-size * 1em
+$base-leader: ($base-line-height - $base-font-size) * 1em / $base-font-size
+$base-half-leader: $base-leader / 2
+
+
+// Font-face ----------------------------------------------------------------
+@font-face
+  // This declaration targets Internet Explorer
+  font-family: 'HelveticaNeueLight'
+  src: url('../fonts/helveticaneuelight-webfont.eot')
+
+@font-face
+  // This declaration targets everything else
+  font-family: 'HelveticaNeueLight'
+  src: url(//:) format("no404"), url('../fonts/helveticaneuelight-webfont.woff') format("woff"), url('../fonts/helveticaneuelight-webfont.ttf') format("truetype"), url('../fonts/helveticaneuelight-webfont.svg#webfontMkGLOlV8') format("svg")
+
+@font-face
+  // This declaration targets Internet Explorer
+  font-family: 'HelveticaNeueBold'
+  src: url('../fonts/helveticaneuebold-webfont.eot')
+
+@font-face
+  // This declaration targets everything else
+  font-family: 'HelveticaNeueBold'
+  src: url(//:) format("no404"), url('../fonts/helveticaneuebold-webfont.woff') format("woff"), url('../fonts/helveticaneuebold-webfont.ttf') format("truetype"), url('../fonts/helveticaneuebold-webfont.svg#webfont2jvunfBH') format("svg")
+
+@font-face
+  // This declaration targets Internet Explorer
+  font-family: 'HelveticaNeueRegular'
+  src: url('../fonts/helveticaneue-webfont.eot')
+
+@font-face
+  // This declaration targets everything else
+  font-family: 'HelveticaNeueRegular'
+  src: url(//:) format("no404"), url('../fonts/helveticaneue-webfont.woff') format("woff"), url('../fonts/helveticaneue-webfont.ttf') format("truetype"), url('../fonts/helveticaneue-webfont.svg#webfont7Svp2ZPN') format("svg")
+
+@font-face
+  // This declaration targets Internet Explorer
+  font-family: 'HelveticaNeueMedium'
+  src: url('../fonts/helveticaneuemedium-webfont.eot')
+
+@font-face
+  // This declaration targets everything else
+  font-family: 'HelveticaNeueMedium'
+  src: url(//:) format("no404"), url('../fonts/helveticaneuemedium-webfont.woff') format("woff"), url('../fonts/helveticaneuemedium-webfont.ttf') format("truetype"), url('../fonts/helveticaneuemedium-webfont.svg#webfont55wfdJMM') format("svg")
+
+
+// Color ----------------------------------------------------------------------
+$dark-grey: #333333
+$light-grey: #555555
+$grey-hover: #bfbfbf
+$green: #5d9610
+$green-hover: #a5c876
+
+$default-text-shadow-color: rgba(0,0,0,.6)
+$default-text-shadow-blur: 1px
+$default-text-shadow-v-offset: 1px
+
+// Typography ----------------------------------------------------------------------
+body
+  font-family: 'HelveticaNeueRegular', sans-serif
+  background: #f9faf9
+  color: $light-grey
+  
+p
+  +trailer(1)
+
+a
+  font-family: 'HelveticaNeueBold'
+  color: $green
+  +transition-property(color)
+  +transition-duration(800ms)
+  &:hover
+    +transition-property(color)
+    +transition-duration(300ms)
+    color: $green-hover
+
+ul
+  font-family: 'HelveticaNeueBold'
+  
+h1, h2, h3, h4, h5, h6
+  font-weight: normal !important
+  word-spacing: -0.03em
+  letter-spacing: -0.05em
+  +trailer(1)
+  color: $dark-grey
+
+h1
+  font-family: 'HelveticaNeueLight',Helvetica,Arial,Sans-serif
+  +adjust-font-size-to(54px)
+  +trailer(0)
+
+h2
+  font-family: 'HelveticaNeueBold',Helvetica,Arial,Sans-serif
+  +adjust-font-size-to(22px)
+  +adjust-leading-to(0.5)
+  +trailer(0.7)
+
+h3
+  font-family: 'HelveticaNeueBold',Helvetica,Arial,Sans-serif
+  +adjust-font-size-to(17px)
+
+h4
+  font-family: 'HelveticaNeueBold',Helvetica,Arial,Sans-serif
+  +adjust-font-size-to(17px) 
+
+hgroup
+  h1
+    span
+      font-family: 'HelveticaNeueMedium'
+  h2
+    font-family: georgia
+    font-style: italic
+    line-height: 1.4em !important
+    +adjust-font-size-to(20px)
+    +trailer(1)
+
+img, embed, object, video
+  max-width: 100%
+  
+@mixin main-menu
+  float: right          
+  li
+    font-family: "HelveticaNeueBold"
+    color: #bdc4bf
+    +adjust-font-size-to(17px)
+    +adjust-leading-to(2)
+    display: inline-block
+    display: inline
+    &:after
+      content: "/"
+      padding: 0 4px 0 6px
+    &:first-child
+      a
+        background-image: none
+        padding-right: none
+    &:last-child:after
+      content: ""
+      padding: 0
+    a
+      +transition-property(color)
+      +transition-duration(800ms)        
+      color: #bdc4bf
+      text-decoration: none
+      font-weight: normal
+      &:hover
+        +transition-property(color)
+        +transition-duration(300ms)          
+        color: #56a26b
+    &.current a
+      color: #0e2d1b
+
+
+// Mixins ----------------------------------------------------------------  
+@mixin yellow-btn
+  font-family: 'HelveticaNeueBold'
+  color: #fff
+  text-decoration: none
+  display: block
+  width: 100%
+  +adjust-font-size-to(14px)
+  +adjust-leading-to(3)
+  border-bottom: 1px solid rgb(145,93,16)
+  border-top: 1px solid rgb(239,209,143)
+  border-left: 1px solid rgb(227,173,76)
+  border-right: 1px solid rgb(180,124,23)
+  +border-radius(7px)
+  +single-text-shadow
+  +box-shadow(rgba(255,255,255, .2) 0 0 5px 1px inset)
+  +linear-gradient(color_stops(rgb(223,162,30),rgb(220,155,29),rgb(216,143,26),rgb(213,136,24)), top, image-url('noise.png'))
+  &:hover
+    +linear-gradient(color_stops(rgb(222,162,30),rgb(234,165,31),rgb(229,151,26),rgb(214,136,24)), top, image-url('noise.png')) 
+       
+@mixin debug
+  background-color: rgba(red,0.6)
