@@ -531,7 +531,7 @@ body #page #secondary .column-2 {
   #margin-left: -1.695%;
 }
 /* line 96, ../sass/screen.sass */
-body #page #secondary .column-2 #illustration-inchoo img {
+body #page #secondary .column-2 #illustration img {
   vertical-align: bottom;
 }
 /* line 98, ../sass/screen.sass */
@@ -727,8 +727,8 @@ body #page #page-footer .column-4 {
     #margin-left: -1.695%;
   }
   /* line 181, ../sass/screen.sass */
-  body #page #secondary .column-2 #illustration-inchoo {
-    padding-top: 4.071em;
+  body #page #secondary .column-2 #illustration {
+    padding-top: 6.786em;
   }
   /* line 183, ../sass/screen.sass */
   body #page #page-footer {
@@ -738,8 +738,8 @@ body #page #page-footer .column-4 {
 }
 @media screen and (max-width: 810px) {
   /* line 192, ../sass/screen.sass */
-  body #page #secondary .column-2 #illustration-inchoo {
-    padding-top: 4.071em;
+  body #page #secondary .column-2 #illustration {
+    padding-top: 6.786em;
   }
 }
 @media screen and (max-width: 840px) {
@@ -800,8 +800,8 @@ body #page #page-footer .column-4 {
     text-align: center;
   }
   /* line 221, ../sass/screen.sass */
-  body #page #secondary .column-2 #illustration-inchoo {
-    padding-top: 6.786em;
+  body #page #secondary .column-2 #illustration {
+    padding-top: 8.143em;
   }
 }
 @media screen and (max-width: 710px) {
@@ -827,7 +827,7 @@ body #page #page-footer .column-4 {
     #margin-left: -1.695%;
   }
   /* line 237, ../sass/screen.sass */
-  body #page #secondary .column-1 #illustration-inchoo, body #page #secondary .column-2 #illustration-inchoo {
+  body #page #secondary .column-1 #illustration, body #page #secondary .column-2 #illustration {
     padding-top: 0em;
   }
   /* line 240, ../sass/screen.sass */
