@@ -68,6 +68,7 @@ body
             +padding-leader(1)
             +padding-trailer(1)
             +margin-trailer(1)
+            +adjust-leading-to(1)            
             font-family: 'HelveticaNeueBold'
             padding-left: 1em
             padding-right: 1em
@@ -91,7 +92,7 @@ body
       .column-2
         @include columns(9,16)
         @include omega(16)
-        #illustration-inchoo
+        #illustration
           img
             vertical-align: bottom
     #page-footer
@@ -119,7 +120,6 @@ body
 
 /* Media Queries ------------------------------------------------------------
 
-
 @media screen and (min-width: 1500px)
   $base-line-height: 19px
   +establish-baseline(16px)
@@ -129,8 +129,7 @@ body
     #page
       #secondary
         hgroup
-          text-align: left
-      
+          text-align: left      
 
 @media screen and (max-width: 1024px)
   body
@@ -177,20 +176,18 @@ body
         .column-2
           @include columns(10,18)
           @include omega
-          #illustration-inchoo
+          #illustration
             +padding-leader(3)
       #page-footer
         @include pad(1,1)
-  
 
 @media screen and (max-width: 810px)
   body
     #page
       #secondary
         .column-2
-          #illustration-inchoo
-            +padding-leader(3)
- 
+          #illustration
+            +padding-leader(2) 
 
 @media screen and (max-width: 840px)
   +establish-baseline(13px)
@@ -217,9 +214,8 @@ body
             text-align: center          
       #secondary
         .column-2
-          #illustration-inchoo
+          #illustration
             +padding-leader(5)
-
 
 @media screen and (max-width: 710px)
   body
@@ -233,7 +229,7 @@ body
         .column-1, .column-2
           @include columns(18,18)
           @include omega
-          #illustration-inchoo
+          #illustration
             +padding-leader(0)
       #page-footer
         .column-1,.column-2,.column-3
@@ -248,7 +244,6 @@ body
           div
             border-left: 1px solid #ccc            
             padding: 0 1em
-
 
 @media screen and (max-width: 480px)
   $base-line-height: 16px
@@ -295,5 +290,3 @@ body
         .column-1,.column-2,.column-3,.column-4
           +margin-trailer(2)
           +margin-leader(0)
-
-
