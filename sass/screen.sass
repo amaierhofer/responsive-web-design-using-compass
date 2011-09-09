@@ -7,26 +7,26 @@ html
 	+debug-vertical-alignment("underline.gif")
 body
 	#page
-		@include container
+		+container
 		// Uncoment the mixin below to see the grid
 		+susy-grid-background      
 		#page-header
-			@include full
-			@include pad(2,2)
+			+full
+			+pad(2,2)
 			background: url("../images/bg-header-pages.png") repeat-x left bottom
 			+padding-leader(2)      
 			min-height: 85px
 			+pie-clearfix
 			#logo
-				@include columns(5,16)
+				+columns(5,16)
 			#main-menu
-				@include columns(11,16)
-				@include omega(16)
+				+columns(11,16)
+				+omega(16)
 				ul
-					@include main-menu
+					+main-menu
 		#main         
-			@include full(16)
-			@include pad(2,2)
+			+full(16)
+			+pad(2,2)
 			+pie-clearfix
 			+padding-leader(1)
 			background: url("../images/bg-header-pages.png") repeat-x bottom
@@ -35,14 +35,14 @@ body
 				#featured
 					text-align: center          
 			.column-1
-				@include columns(5,16)
-				@include prefix(0,16)        
+				+columns(5,16)
+				+prefix(0,16)        
 			.column-2
-				@include columns(5,16)
-				@include prefix(0,16)        
+				+columns(5,16)
+				+prefix(0,16)        
 			.column-3
-				@include columns(5,16)
-				@include prefix(0,16)        
+				+columns(5,16)
+				+prefix(0,16)        
 			.column-1,.column-2,.column-3
 				h2
 					+adjust-font-size-to(28px)
@@ -54,16 +54,16 @@ body
 						+margin-trailer(0.5)
 						+adjust-font-size-to(13px)        
 			footer
-				@include columns(15,16)
-				@include prefix(0,16)
-				@include suffix(1,16)
-				@include omega(16)
+				+columns(15,16)
+				+prefix(0,16)
+				+suffix(1,16)
+				+omega(16)
 				+pie-clearfix
 				+padding-trailer(1)
 				+padding-leader(1)
 				text-align: center
 				.col-txt
-					@include columns(10,14)
+					+columns(10,14)
 					p
 						+adjust-font-size-to(15px)
 						+border-radius(7px)
@@ -77,23 +77,23 @@ body
 						display: block            
 						background-color: #edeeed
 				.col-btn
-					@include columns(4,14)
-					@include omega(14)
+					+columns(4,14)
+					+omega(14)
 					float: left
 					a
-						@include yellow-btn
+						+yellow-btn
 		#secondary
-			@include full
-			@include pad(2,2)
+			+full
+			+pad(2,2)
 			+pie-clearfix
 			+padding-leader(3)
 			header
-				@include full(16)
+				+full(16)
 			.column-1
-				@include columns(6,16)
+				+columns(6,16)
 			.column-2
-				@include columns(9,16)
-				@include omega(16)
+				+columns(9,16)
+				+omega(16)
 				#illustration
 					img
 						vertical-align: bottom
@@ -102,8 +102,8 @@ body
 			+padding-leader(2)
 			+padding-trailer(2)
 			background-color: #E5E5E5
-			@include full
-			@include pad(2,2)
+			+full
+			+pad(2,2)
 			p
 				font-family: Georgia
 				font-style: italic
@@ -112,12 +112,12 @@ body
 				&:hover
 					color: $grey-hover
 			.column-1
-				@include columns(4,16)
+				+columns(4,16)
 			.column-2,.column-3
-				@include columns(4,16)
+				+columns(4,16)
 			.column-4
-				@include columns(4,16)
-				@include omega
+				+columns(4,16)
+				+omega
 
 
 /* Media Queries ------------------------------------------------------------
@@ -144,46 +144,46 @@ body
 				+adjust-font-size-to(21px)
 		#page
 			#page-header
-				@include pad(1,1)
+				+pad(1,1)
 				#logo
-					@include columns(6,18)
+					+columns(6,18)
 				#main-menu
-					@include columns(12,18)
-					@include omega(18)
+					+columns(12,18)
+					+omega(18)
 			#main
-				@include pad(1,1)
-				@include full(18)
+				+pad(1,1)
+				+full(18)
 				+padding-trailer(1)
 				.column-1,.column-3
-					@include columns(8,18)
-					@include suffix(1,18)
-					@include prefix(0,18)
+					+columns(8,18)
+					+suffix(1,18)
+					+prefix(0,18)
 				.column-2,footer
-					@include columns(8,18)
-					@include suffix(1,18)
-					@include prefix(0,18)                          
-					@include omega(18)
+					+columns(8,18)
+					+suffix(1,18)
+					+prefix(0,18)                          
+					+omega(18)
 				.column-1,.column-2, .column-3
 					+padding-trailer(1)
 				footer
 					+padding-trailer(1)
 					+padding-leader(1)
 					.col-txt
-						@include columns(8,8)
+						+columns(8,8)
 					.col-btn
-						@include columns(8,8)
-						@include omega(8)
+						+columns(8,8)
+						+omega(8)
 			#secondary
-				@include pad(1,1)
+				+pad(1,1)
 				.column-1
-					@include columns(7,18)
+					+columns(7,18)
 				.column-2
-					@include columns(10,18)
-					@include omega
+					+columns(10,18)
+					+omega
 					#illustration
 						+padding-leader(5)
 			#page-footer
-				@include pad(1,1)
+				+pad(1,1)
 
 
 @media screen and (max-width: 810px)
@@ -205,14 +205,14 @@ body
 				+adjust-font-size-to(19px)
 		#page
 			#page-header
-				@include pad(1,1)
+				+pad(1,1)
 				#logo
-					@include columns(18,18)
-					@include omega
+					+columns(18,18)
+					+omega
 					text-align: center
 				#main-menu
-					@include columns(18,18)
-					@include omega(18)
+					+columns(18,18)
+					+omega(18)
 					+padding-trailer(1)
 					+padding-leader(1)
 					ul
@@ -234,18 +234,18 @@ body
 		#page
 			#secondary
 				.column-1, .column-2
-					@include columns(18,18)
-					@include omega
+					+columns(18,18)
+					+omega
 					#illustration
 						+padding-leader(0)
 			#page-footer
 				.column-1,.column-2,.column-3
-					@include columns(6,18)                  
+					+columns(6,18)                  
 				.column-3
-					@include omega(18)
+					+omega(18)
 				.column-4
-					@include columns(18,18)
-					@include omega(18)
+					+columns(18,18)
+					+omega(18)
 					+margin-leader(2)
 				.column-1,.column-2,.column-3,.column-4
 					div
@@ -271,30 +271,30 @@ body
 						padding: 0 1px 0 4px
 			#main
 				.column-1, .column-2, .column-3        
-					@include columns(18,18)
-					@include omega(18)
-					@include prefix(0,18)
-					@include suffix(0,18)
+					+columns(18,18)
+					+omega(18)
+					+prefix(0,18)
+					+suffix(0,18)
 					+padding-trailer(1)
 					h2
 						+adjust-font-size-to(22px)
 				footer
-					@include columns(18,18)
-					@include omega(18)
-					@include prefix(0,18)
-					@include suffix(0,18)
+					+columns(18,18)
+					+omega(18)
+					+prefix(0,18)
+					+suffix(0,18)
 					.col-txt
-						@include columns(18,18)
+						+columns(18,18)
 					.col-btn
-						@include columns(18,18)
-						@include omega(18)
+						+columns(18,18)
+						+omega(18)
 			#page-footer
 				.column-1,.column-3
-					@include columns(8,18)          
-					@include suffix(2)
+					+columns(8,18)          
+					+suffix(2)
 				.column-2,.column-4
-					@include columns(8,18)          
-					@include omega(18)
+					+columns(8,18)          
+					+omega(18)
 				.column-1,.column-2,.column-3,.column-4
 					+margin-trailer(2)
 					+margin-leader(0)
